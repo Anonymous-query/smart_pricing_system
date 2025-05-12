@@ -19,3 +19,12 @@ class Discount(TimeStampedMixin):
     class Meta:
         verbose_name = "Discount"
         verbose_name_plural = "Discounts"
+
+class OrderTieredDiscount(models.Model):
+    min_total = models.FloatField()
+    max_total = models.FloatField(null=True, blank=True)
+    discount_percent = models.FloatField()
+
+    class Meta:
+        verbose_name = "Order Tiered Discount"
+        verbose_name_plural = "Order Tiered Discounts"
