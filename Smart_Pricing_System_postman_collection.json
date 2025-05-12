@@ -1,0 +1,740 @@
+{
+	"info": {
+		"_postman_id": "2d63fea3-c08b-445f-ada4-fff2617fd593",
+		"name": "Smart Pricing System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44133850",
+		"_collection_link": "https://nilesh-8055727.postman.co/workspace/Nilesh's-Workspace~be3559f3-98b4-4ad7-8de0-b0db386c531d/collection/44133850-2d63fea3-c08b-445f-ada4-fff2617fd593?action=share&source=collection_link&creator=44133850"
+	},
+	"item": [
+		{
+			"name": "Get Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "jack_reacher",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user2020",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDYzNTA3LCJpYXQiOjE3NDcwNTk5MDcsImp0aSI6ImE2ZWRhZjI1OTk4MTRmYWY5OTNlOGM4Nzc3NTBiMWJkIiwidXNlcl9pZCI6M30.AEZne7JgMyJNUPlk4UCcmkrNbj5nRXWz39WViXbpBCo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/products/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDcxNDYwLCJpYXQiOjE3NDcwNjc4NjAsImp0aSI6IjQ4YTZhZGUyNTE2MTQ2MmQ5NjEyZTQ0MzA4MTk5MzE2IiwidXNlcl9pZCI6M30._nW2EUOv33Y3n5CaMMyxhD7dGjEqVJ1p3fA05w24xdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Alteza",
+							"type": "text"
+						},
+						{
+							"key": "base_price",
+							"value": "200",
+							"type": "text"
+						},
+						{
+							"key": "product_type",
+							"value": "bulk",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/products/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDYzNTA3LCJpYXQiOjE3NDcwNTk5MDcsImp0aSI6ImE2ZWRhZjI1OTk4MTRmYWY5OTNlOGM4Nzc3NTBiMWJkIiwidXNlcl9pZCI6M30.AEZne7JgMyJNUPlk4UCcmkrNbj5nRXWz39WViXbpBCo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/products/5/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDYzNTA3LCJpYXQiOjE3NDcwNTk5MDcsImp0aSI6ImE2ZWRhZjI1OTk4MTRmYWY5OTNlOGM4Nzc3NTBiMWJkIiwidXNlcl9pZCI6M30.AEZne7JgMyJNUPlk4UCcmkrNbj5nRXWz39WViXbpBCo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Winter Jacket",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/products/5/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDYzNTA3LCJpYXQiOjE3NDcwNTk5MDcsImp0aSI6ImE2ZWRhZjI1OTk4MTRmYWY5OTNlOGM4Nzc3NTBiMWJkIiwidXNlcl9pZCI6M30.AEZne7JgMyJNUPlk4UCcmkrNbj5nRXWz39WViXbpBCo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/products/51/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"51",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get real-time price",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDYzNTA3LCJpYXQiOjE3NDcwNTk5MDcsImp0aSI6ImE2ZWRhZjI1OTk4MTRmYWY5OTNlOGM4Nzc3NTBiMWJkIiwidXNlcl9pZCI6M30.AEZne7JgMyJNUPlk4UCcmkrNbj5nRXWz39WViXbpBCo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/products/5/price?quantity=10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"5",
+						"price"
+					],
+					"query": [
+						{
+							"key": "quantity",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDYzNTA3LCJpYXQiOjE3NDcwNTk5MDcsImp0aSI6ImE2ZWRhZjI1OTk4MTRmYWY5OTNlOGM4Nzc3NTBiMWJkIiwidXNlcl9pZCI6M30.AEZne7JgMyJNUPlk4UCcmkrNbj5nRXWz39WViXbpBCo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/orders/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDYzNTA3LCJpYXQiOjE3NDcwNTk5MDcsImp0aSI6ImE2ZWRhZjI1OTk4MTRmYWY5OTNlOGM4Nzc3NTBiMWJkIiwidXNlcl9pZCI6M30.AEZne7JgMyJNUPlk4UCcmkrNbj5nRXWz39WViXbpBCo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"items\": [\n    {\n      \"product\": 4,\n      \"quantity\": 25\n    },\n    {\n      \"product\": 5,\n      \"quantity\": 10\n    }\n  ],\n  \"discounts\": [4, 5]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/orders/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get order details + total",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDYzNTA3LCJpYXQiOjE3NDcwNTk5MDcsImp0aSI6ImE2ZWRhZjI1OTk4MTRmYWY5OTNlOGM4Nzc3NTBiMWJkIiwidXNlcl9pZCI6M30.AEZne7JgMyJNUPlk4UCcmkrNbj5nRXWz39WViXbpBCo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/orders/14/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"14",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all discounts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDcxNDYwLCJpYXQiOjE3NDcwNjc4NjAsImp0aSI6IjQ4YTZhZGUyNTE2MTQ2MmQ5NjEyZTQ0MzA4MTk5MzE2IiwidXNlcl9pZCI6M30._nW2EUOv33Y3n5CaMMyxhD7dGjEqVJ1p3fA05w24xdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/discounts/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"discounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a discount",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDcxNDYwLCJpYXQiOjE3NDcwNjc4NjAsImp0aSI6IjQ4YTZhZGUyNTE2MTQ2MmQ5NjEyZTQ0MzA4MTk5MzE2IiwidXNlcl9pZCI6M30._nW2EUOv33Y3n5CaMMyxhD7dGjEqVJ1p3fA05w24xdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "$30 Off",
+							"type": "text"
+						},
+						{
+							"key": "discount_type",
+							"value": "fixed",
+							"type": "text"
+						},
+						{
+							"key": "value",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "priority",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/discounts/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"discounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a discount",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDcxNDYwLCJpYXQiOjE3NDcwNjc4NjAsImp0aSI6IjQ4YTZhZGUyNTE2MTQ2MmQ5NjEyZTQ0MzA4MTk5MzE2IiwidXNlcl9pZCI6M30._nW2EUOv33Y3n5CaMMyxhD7dGjEqVJ1p3fA05w24xdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/discounts/7/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"discounts",
+						"7",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a discount",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDcxNDYwLCJpYXQiOjE3NDcwNjc4NjAsImp0aSI6IjQ4YTZhZGUyNTE2MTQ2MmQ5NjEyZTQ0MzA4MTk5MzE2IiwidXNlcl9pZCI6M30._nW2EUOv33Y3n5CaMMyxhD7dGjEqVJ1p3fA05w24xdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "$40 Off",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/discounts/7/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"discounts",
+						"7",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a discount",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDcxNDYwLCJpYXQiOjE3NDcwNjc4NjAsImp0aSI6IjQ4YTZhZGUyNTE2MTQ2MmQ5NjEyZTQ0MzA4MTk5MzE2IiwidXNlcl9pZCI6M30._nW2EUOv33Y3n5CaMMyxhD7dGjEqVJ1p3fA05w24xdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/discounts/7/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"discounts",
+						"7",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discounts by type",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDcxNDYwLCJpYXQiOjE3NDcwNjc4NjAsImp0aSI6IjQ4YTZhZGUyNTE2MTQ2MmQ5NjEyZTQ0MzA4MTk5MzE2IiwidXNlcl9pZCI6M30._nW2EUOv33Y3n5CaMMyxhD7dGjEqVJ1p3fA05w24xdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/discounts/type/tiered/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"discounts",
+						"type",
+						"tiered",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
